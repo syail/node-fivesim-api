@@ -1,0 +1,26 @@
+{
+  "name": "fivesim-api",
+  "version": "1.0.0",
+  "description": "",
+  "main": "./dist/index.js",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsc"
+  },
+  "keywords": [],
+  "author": "syail",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/syail/fivesim-api-node.git"
+  },
+  "devDependencies": {
+    "@types/node": "^20.12.4",
+    "typescript": "^5.4.3"
+  },
+  "dependencies": {
+    "axios": "^1.6.8"
+  }
+}

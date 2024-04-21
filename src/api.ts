@@ -1,7 +1,7 @@
-import axios, { AxiosInstance } from "axios";
-import { GetPricesByProductRes, GetProductRes, GetProfileRes } from "./dto";
+import axios, { AxiosInstance } from 'axios';
+import { GetPricesByProductRes, GetProductRes, GetProfileRes } from './dto';
 
-const FIVESIM_API_HOST = "https://5sim.net";
+const FIVESIM_API_HOST = 'https://5sim.net';
 
 export class FiveSimApi {
   private _client: AxiosInstance;
@@ -11,18 +11,18 @@ export class FiveSimApi {
       baseURL: FIVESIM_API_HOST,
       headers: {
         Authorization: `Bearer ${config.token}`,
-        Accept: "application/json",
+        Accept: 'application/json',
       },
     });
   }
 
   async getProfile() {
-    const res = await this._client.get<GetProfileRes>("/v1/user/profile");
+    const res = await this._client.get<GetProfileRes>('/v1/user/profile');
 
     return res.data;
   }
 
-  async getProducts(country: string = "any", operator: string = "any") {
+  async getProducts(country: string = 'any', operator: string = 'any') {
     const res = await this._client.get<GetProductRes>(`/v1/guest/products/${country}/${operator}`);
 
     return res.data;
@@ -36,5 +36,9 @@ export class FiveSimApi {
 }
 
 interface ApiConfig {
-  token: string;
+  /**
+   * 5sim API token
+   * Required to access the user api.
+   */
+  token?: string;
 }

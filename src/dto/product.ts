@@ -7,8 +7,17 @@ export interface GetProductRes {
 }
 
 export interface GetPricesByProductRes {
+  /**
+   * Service
+   */
   [key: string]: {
+    /**
+     * Country
+     */
     [key: string]: {
+      /**
+       * Operator
+       */
       [key: string]: {
         cost: number;
         count: number;
